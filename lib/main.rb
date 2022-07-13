@@ -3,8 +3,8 @@ require 'pry'
 require_relative 'variables.rb'
 include Variables
 
-knight = [1, 1]
-target = [4, 7]
+knight = [3, 5]
+target = [6, 2]
 
 #3,5 6,2
 
