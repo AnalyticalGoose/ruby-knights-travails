@@ -14,11 +14,13 @@ module Variables
 
     # 8 moves the knight can make
     KXY = [[-2,-1], [-1,-2], [1,-2], [2,-1] ,[-2,1] ,[-1,2] ,[1,2] ,[2,1]]
-    
-    # Search steps required for knight and destination(backwards) to have a common square
-    CALC_STEPS = [[0,0], [0,0], [0,0], [1,0], [3,1], [3,1], [4,1]]
 
-    COORDS = [1, 2, 3, 4, 5, 6, 7, 8]
-    BOARD_COORDS = COORDS.product(*[COORDS] * 1)
 
+    # There are only 4 variations on a 6 move traversal. A lookup is far more efficient.
+    SIX = {
+        "[1, 8]" => [[3, 7], [5, 6], [4, 4], [5, 2], [7, 3]], 
+        "[8, 8]" => [[6, 7], [4, 6], [5, 6], [4, 2], [2, 3]], 
+        "[8, 1]" => [[7, 3], [5, 2], [4, 4], [5, 6], [3, 7]], 
+        "[1, 1]" => [[2, 3], [4, 2], [5, 6], [4, 6], [6, 7]]
+    }
 end
